@@ -189,7 +189,13 @@
     canvas.height = 400;
     
     var ctx = canvas.getContext('2d');
+    ctx.font = ("25px slkscr");
+    ctx.fillStyle = "red";
 
+//Preload
+    
+    //var textPreloading = "Please space to begin...";
+    //ctx.fillText(textPreloading, 200, 200);
     
 //=================
 //Images in
@@ -200,12 +206,6 @@
         this.ready = true;
     }
 //prologue and end
-    var p00 = new Image();
-    p00.ready = false;
-    p00.onload = isReady;
-    p00.src = "images/prologue/p00.png";
-    
-    
     var p0 = new Image();
     p0.ready = false;
     p0.onload = isReady;
@@ -607,6 +607,11 @@
     }
     
     
+    // 每隔隨機秒數產生{
+    //禮物1、禮物2、炸彈、食物 => 寫成function?? 
+    // (1)x在畫布長當中隨機選
+    // (2)掉落時，重力加速度 Y
+    // (3)如果碰到角色則清除，並!!!! 顯示+1 ，否清除
     
     //倒數計時
     //var Obj = setInterval(createObj, 30);
