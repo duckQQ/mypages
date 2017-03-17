@@ -1,0 +1,622 @@
+<!DOCTYPE = html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+    <link href="css/notosanstc.css" rel="stylesheeet">
+    <title>Christmas</title>
+    <style type="text/css">
+        /*@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);*/
+        p {
+                font-family: 'Noto Sans TC', sans-serif !important;
+                text-shadow: 1px 1px 1px #aaa;
+            }
+    </style>
+    <style>
+     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: transparent;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+    body {
+                  position: relative;
+                background-image:url( 'images/background/bg_tate_yuki4.jpg' );
+                background-repeat:repeat;
+          }
+           
+            /*body {*/
+            /*    font-family: 'Bungee Inline', cursive;*/
+            /*    font-size: 48px;*/
+                
+            /*}*/
+            
+            #h1{
+                font-family: 'Bungee Inline';
+                text-shadow: 4px 4px 4px #aaa;
+            }
+            
+    </style>
+    
+    <script src="src/jquery-3.1.1.min.js"></script>
+    <script src="src/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--置中-->
+    <div class = "container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+                    <h2><p>其他連結：</p></h2>
+                    <div class="well" id ="well1">
+                  <p><a href="https://santatracker.google.com/?hl=zh-TW#village" target="_blank">Google聖誕老人村</a></p>
+                  </div>
+                  <div class="well">
+                  <p><a href="https://santadive.withgoogle.com/" target="_blank">Google聖誕老人追禮物</a></p>
+                  </div>
+                  <p>淚｡･ﾟ･(*ﾉД`*)･ﾟ･｡</p>
+                </div>
+            
+            
+                <div class="col-sm-6 text-left"> 
+                    <h1 id ="h1">Collecting Gifts!</h1>
+                
+                    <canvas id = "canvas"></canvas><br></br>
+                 
+                    <button class="btn btn-success"  onclick="Pause()">Pause</button>
+                    <button class="btn btn-success"  onclick="restart()">Continued</button>
+                    <button class="btn btn-success"  onclick="reset()">Quick Start</button>
+                    <button class="btn btn-primary"  onClick="StopMusic()" >Stop Music</button>
+                    <button class="btn btn-primary"  onClick="PlayMusic()" >Play Music</button>
+            </div>
+        
+        <!--右邊連結-->
+          <div class="col-sm-2 sidenav">
+              <h2><p>素材來源：</p></h2>
+              <div class="well-sm">
+                <p><br>聖誕老人角色圖來源 :</br>
+                    <a href="http://charas-project.net/charas2/index.php" target="_blank">
+                    chara project 
+                    </a>
+                    </p>
+              </div>
+              <div class="well-sm">
+                  <p><br>背景音樂：</br>
+                  <a href="http://amachamusic.chagasi.com/music_retrogamecenter.html" target="_blank">
+                  「甘茶の音楽工房」
+                  </a>
+                  </p>
+              </div>
+              
+              <div class="well-sm">
+                  <p><br>音效：</br>フリー音楽素材/魔王魂<br>
+                  <a href="http://maoudamashii.jokersounds.com/" target="_blank">
+                  <IMG src="images/banner/banner03.png" width="88" height="31" border="0">
+                  </a>
+                  </p>
+              </div>
+              
+              <div class="well-sm">
+                  <p><br>狀態圖：COLORNIX</br>
+                  <a href="http://colornix.com/" target="_blank">
+                  <IMG src="images/banner/colbn_200.gif" width="100" height="20" border="0">
+                  </a>
+                  </p>
+              </div>
+        </div>
+        <div class="col-sm-2 sidenav">
+            <h2><p></p></h2>
+              <div class="well-sm">
+                  <p><br>蛋糕、火焰：Whitecat</br>
+                  <a href="http://whitecafe.sakura.ne.jp/" target="_blank">
+                  <IMG src="images/banner/mini_banner_01.gif" width="88" height="31" border="0">
+                  </a>
+                  </p>
+              </div>
+              <div class="well-sm">
+                  <p><br>炸彈、禮物、其他圖：alekksall / Freepik</br>
+                  <a href="http://www.freepik.com" target="_blank">
+                      <IMG src="images/banner/freePik.png" width="88" height="31" border="0">
+                  </a>
+                  </p>
+              </div>
+              <div class="well-sm">
+                  <p><br>遊戲背景磚塊：<br>Open Clip Art <br>
+                  <a href="https://openclipart.org/" target="_blank">
+                      <IMG src="images/banner/openclipart.png" width="88" height="31" border="0">
+                  </a>
+                  </p>
+              </div>
+              
+              <div class="well-sm">
+                  <p><br>網頁背景：</br>風と樹と空とフリー素材
+                  <a href="http://kaze-sora.com/" target="_blank">
+                      <IMG src="images/banner/kazesora02.gif" width="88" height="31" border="0" alt="風と樹と空とフリー素材 ">
+                  </a>
+                  </p>
+              </div>
+              
+          </div>  
+       </div> 
+    </div>    
+    <br></br>
+    
+    <!--Footer-->
+    <footer class="container-fluid text-left">
+        <p>網頁範本：
+            <a href="http://www.w3schools.com/bootstrap/bootstrap_templates.asp" target="_blank">
+            W3Schools' Bootstrap Templates</a>
+          
+    字型： <a href="http://www.kottke.org/plus/type/silkscreen/index.html" target="_blank">Silkscreen</a> 、
+           <a href="https://fonts.google.com/" target="_blank">Google Fonts_Bungee Inline</a>
+        </p>
+        <p></p>
+    </footer>    
+        
+        
+         
+            
+    <!--音樂        -->
+    <audio id ="theme_music" loop src= "sounds/retrogamecenter.mp3" type= "audio/mp3" />
+    </audio>
+    <audio id ="onepoint" src= "sounds/se_onepoint22.mp3" type= "audio/mp3" style="display:none;" />
+    </audio>
+    <audio id ="bang" src="sounds/se_explosion04.mp3" type= "audio/mp3" style="display:none;" />
+    </audio>        
+<script>
+    
+    var canvas = document.getElementById("canvas");
+    canvas.width = 600;
+    canvas.height = 400;
+    
+    var ctx = canvas.getContext('2d');
+    ctx.font = ("25px slkscr");
+    ctx.fillStyle = "red";
+
+//Preload
+    
+    //var textPreloading = "Please space to begin...";
+    //ctx.fillText(textPreloading, 200, 200);
+    
+//=================
+//Images in
+//==================
+//charecters in 
+        
+    function isReady(){
+        this.ready = true;
+    }
+//prologue and end
+    var p0 = new Image();
+    p0.ready = false;
+    p0.onload = isReady;
+    p0.src = "images/prologue/p0.png";
+    
+    var p1 = new Image();
+    p1.ready = false;
+    p1.onload = isReady;
+    p1.src = "images/prologue/p1.png";
+    
+    var p2 = new Image();
+    p2.ready = false;
+    p2.onload = isReady;
+    p2.src = "images/prologue/p2.png";
+    
+    var p3 = new Image();
+    p3.ready = false;
+    p3.onload = isReady;
+    p3.src = "images/prologue/p3.png";
+    
+    var endPic = new Image();
+    endPic.ready = false;
+    endPic.onload = isReady;
+    endPic.src = "images/end.png";
+    //Start Image
+    ctx.drawImage(p0, 0,0, 600, 400);
+        
+//Background in
+    var bg = new Image();
+    bg.ready = false;
+    bg.onload = isReady;
+    bg.src = "images/bg.png";
+    //set char 2 
+    var char2 = new Image();
+    char2.ready = false;
+    char2.onload = isReady;
+    char2.src = "images/chara-b.png";
+    
+    //drawGifts
+    //gifts in
+    var gift = new Image();
+    gift.src = "images/gift1.png";
+    gift.onload = isReady;
+    
+    var gift2 = new Image();
+    gift2.onload = isReady;
+    gift2.src = "images/gift2.png";
+    
+    //draw bomb
+    var bomb1 = new Image();
+    bomb1.src = "images/g5561.png"
+    bomb1.onload = isReady;
+    
+    //drawfood
+    var food1 = new Image();
+    food1.src = "images/food_005.png";
+    food1.onload = isReady;
+    //draw fire  change food2 to fire
+    var food2 = new Image();
+    food2.src = "images/fire.png";
+    food2.onload = isReady;
+    
+    //Status
+    var heart = new Image();
+    heart.onload = isReady;
+    heart.src = "images/status_008.gif";
+    
+    var si = new Image();
+    si.onload = isReady;
+    si.src = "images/status_004.gif"
+    //Add control 
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
+
+    //------------
+    //Sounds
+    //------------
+    var onePoint = document.getElementById("onepoint");
+    onePoint.ready = false;
+    onePoint.oncanplay = isReady;
+    var bang = document.getElementById("bang");
+    bang.ready = false;
+    bang.oncanplay = isReady;
+    var theme = document.getElementById("theme_music");
+    theme.ready = false;
+    theme.oncanplay = isReady;
+    
+    //------------
+    //Key Handlers
+    //------------
+    var isMoving, facing, isStart;
+    isStart = 0;
+    function keyDownHandler(e){
+        var keyPress = e.keyCode;
+        if(keyPress == 39) {//right
+            isMoving = true;
+            facing = "R";
+        }
+        else if(keyPress == 37){//left
+            isMoving = true;  
+            facing = "L";
+        }
+        
+        if(keyPress == 32){
+            isStart += 1;
+            prologue();
+   
+        }
+        
+    }
+    
+    function keyUpHandler(e){
+        var keyPress = e.keyCode;
+        if(keyPress == 39 || keyPress == 37 || 
+        keyPress == 38 || keyPress == 40 || keyPress == 32)
+        {
+            facing = "D"; 
+            isMoving = false;   
+        }
+        
+    }
+    function prologue(){
+        if(isStart == 0){
+            ctx.drawImage(p0, 0,0, 600, 400);
+        }else if (isStart == 1){
+            ctx.drawImage(p1, 0,0, 600, 400);
+        }else if(isStart == 2){
+            ctx.drawImage(p2, 0,0, 600, 400);
+        }else if(isStart == 3) {
+            ctx.drawImage(p3, 0,0, 600, 400);
+        }else if(isStart == 4){
+            isStart = 0;
+            gameloop = setInterval(update, 50); //執行畫面更新
+        }
+        
+    }
+    //------------
+    //Update Charecter 變數
+    //------------
+    var gameloop;
+    theme.play();
+    var counter = 0;
+    var charX, charY, currX, currY, giftX, giftY, 
+        gravitySpeed,Obj, objX, objY ,i, gift2X, gift2Y,
+        bomb1X, bomb1Y, food1X, food1Y, food2X, food2Y, counter;
+    //角色位置
+    charX = 250;
+    charY = 300;
+
+    //角色來源圖檔位置
+    currX = 0;
+    currY = 192;
+    
+    //掉落物位置
+    objX = (Math.random()*500)+1;
+    objY = 0;
+    giftX = objX;
+    giftY = objY;
+    gift2X = (Math.random()*500)+1;
+    gift2Y = objY;
+    bomb1X = (Math.random()*500)+1;
+    bomb1Y = objY;
+    food1X = (Math.random()*500)+1;
+    food1Y = objY;
+    food2X = (Math.random()*500)+1;
+    food2Y = objY;
+    
+    //重力調整
+    gravitySpeed = 2;
+    
+    //Score
+    counter = 0;
+
+    //=====================
+    //Update function 
+    //====================
+    function update(){
+        //======================
+        // update canvas
+        //====================
+        //clear canvas
+       ctx.clearRect(0, 0, 600, 400);
+        
+        //draw background
+        ctx.drawImage(bg,250,200,600,400,0, 0, 600, 400);
+        
+        //draw score
+        ctx.fillText("Score: " + counter, 400, 30 );
+        
+        //動作調整
+        if(isMoving){
+            if(facing == "R"){
+                charX += 5;  //圖案在畫布上的位置
+			    currY = 96;   //圖案在來源檔案中位置
+            }
+            else if(facing == "L"){
+                charX -= 5;
+                currY = 288;
+            }
+            else if(facing == "U"){
+                charY -= 5;
+                currY = 0;
+            }
+            else if(facing == "D"){
+                charY += 5;
+                currY = 196;
+            }
+            
+            currX += 72; //每次都有加一個角色寬度，製造會動的效果
+               
+            if (currX >= 216) //如果大於來源圖檔寬度
+			currX = 0; //回歸來源圖檔0
+			//跑出畫布時，回到另外一邊
+			if(charX >= 600) 
+			charX = 1;
+			
+			if(charX <= 0)
+			charX = 535;
+        }
+    //Draw Image 角色
+	ctx.drawImage(char2,currX,currY,72, 96,
+					charX,charY,72, 96);
+	
+    /*==================
+        掉落物與計分
+    =================*/
+    //當分數到達10速度加快
+    if(counter >= 5) {
+        gravitySpeed = 4;
+        if(counter == 10){
+            clearInterval(gameloop);
+            ctx.drawImage(endPic, 0,0, 600, 400);
+            counter = 0;
+        }
+    }else{
+        gravitySpeed = 2;
+    }
+    
+	//掉落物- 禮物
+	    giftY += gravitySpeed;
+    	// 禮物碰到角色時清除
+        if(giftX+ 50 <= charX+ 72 && giftX + 50 > charX
+        && giftY >= charY && giftY <= charY + 90)
+         {
+             counter++;
+             //ctx.clearRect(gift, giftX, giftY, 50,50);
+             //giftX = 
+             ctx.drawImage(gift, giftX, 400, 50,50);
+             giftY = 400;
+             ctx.drawImage(heart, charX, charY, 30,30);
+             onePoint.play();
+             if(giftY >= 400){
+                 giftX = (Math.random()*500)+1;
+                 giftY = -150;
+                 giftY += gravitySpeed;
+                 ctx.drawImage(gift, giftX, giftY, 50,50);
+             }
+         }
+        else{
+            ctx.drawImage(gift, giftX, giftY, 50,50);
+            if(giftY >= 440){
+                 giftX = (Math.random()*500)+1;
+                 giftY = -10;
+                 giftY += gravitySpeed;
+                 ctx.drawImage(gift, giftX, giftY, 50,50);
+             }
+        }
+
+    //掉落物 禮物2
+    
+    gift2Y += gravitySpeed + 1.5;
+    	// 禮物碰到角色時清除
+        if(gift2X+ 50 <= charX+ 72 && gift2X + 50 > charX
+        && gift2Y >= charY && gift2Y <= charY + 90)
+         {
+             counter++;
+             ctx.drawImage(gift2, gift2X, 400, 50,50);
+             gift2Y = 440;
+             ctx.drawImage(heart, charX, charY, 35,35);
+             onePoint.play();
+             if(gift2Y >= 440){
+                 gift2X = (Math.random()*500)+1;
+                 gift2Y = -50;
+                 gift2Y += gravitySpeed;
+                 ctx.drawImage(gift2, gift2X, gift2Y, 50,50);
+             }
+         }
+        else{
+            ctx.drawImage(gift2, gift2X, gift2Y, 50,50);
+            if(gift2Y >= 440){
+                 gift2X = (Math.random()*500)+1;
+                 gift2Y = -150;
+                 gift2Y += gravitySpeed;
+                 ctx.drawImage(gift2, gift2X, gift2Y, 50,50);
+             }
+        }
+	/*掉落物 - 炸彈*/
+	    bomb1Y += gravitySpeed + 0.5;
+    	// 禮物碰到角色時清除
+        if(bomb1X+ 50 <= charX+ 72 && bomb1X + 50 > charX
+        && bomb1Y >= charY && bomb1Y <= charY + 90)
+         {
+             counter = 0;
+             ctx.drawImage(bomb1, bomb1X, 400, 50,50);
+             bomb1Y = 440;
+             ctx.drawImage(si, charX, charY, 35,35);
+             bang.play();
+             if(bomb1Y >= 440){
+                 bomb1X = (Math.random()*500)+1;
+                 bomb1Y = -150;
+                 bomb1Y += gravitySpeed;
+                 ctx.drawImage(bomb1, bomb1X, bomb1Y, 50,50);
+             }
+         }
+        else{
+            ctx.drawImage(bomb1, bomb1X, bomb1Y, 50,50);
+            if(bomb1Y >= 440){
+                 bomb1X = (Math.random()*500)+1;
+                 bomb1Y = -150;
+                 bomb1Y += gravitySpeed;
+                 ctx.drawImage(bomb1, bomb1X, bomb1Y, 50,50);
+             }
+        }
+        
+    //掉落物 -食物 1
+    food1Y += gravitySpeed + 2;
+    	// 禮物碰到角色時清除
+        if(food1X+ 50 <= charX+ 72 && food1X + 50 > charX
+        && food1Y >= charY && food1Y <= charY + 90)
+         {
+             counter++;
+             ctx.drawImage(food1, food1X, 400, 50,50);
+             food1Y = 440;
+             ctx.drawImage(heart, charX, charY, 35,35);
+             onePoint.play();
+             if(food1Y >= 500){
+                 food1X = (Math.random()*500)+1;
+                 food1Y = -120;
+                 food1Y += gravitySpeed + 2;
+                 ctx.drawImage(food1, food1X, food1Y, 50,50);
+             }
+         }
+        else{
+            ctx.drawImage(food1, food1X, food1Y, 50,50);
+            if(food1Y >= 440){
+                 food1X = (Math.random()*500)+1;
+                 food1Y = -100;
+                 food1Y += gravitySpeed + 2;
+                 ctx.drawImage(food1, food1X, food1Y, 50,50);
+             }
+        }
+    //掉落物 食物-2  => 改成火
+    food2Y += gravitySpeed + 2;
+    	// 禮物碰到角色時清除
+        if(food2X+ 50 <= charX+ 72 && food2X + 50 > charX
+        && food2Y >= charY && food2Y <= charY + 90)
+         {
+             counter = 0;
+             ctx.drawImage(food2, food2X, 400, 50,50);
+             food2Y = 440;
+             bang.play();
+             ctx.drawImage(si, charX, charY, 35,35);
+             if(food2Y >= 440){
+                 food2X = (Math.random()*500)+1;
+                 food2Y = -10;
+                 food2Y += gravitySpeed;
+                 ctx.drawImage(food2, food2X, food2Y, 50,50);
+             }
+         }
+        else{
+            ctx.drawImage(food2, food2X, food2Y, 50,50);
+            if(food2Y >= 440){
+                 food2X = (Math.random()*500)+1;
+                 food2Y = -50;
+                 food2Y += gravitySpeed;
+                 ctx.drawImage(food2, food2X, food2Y, 50,50);
+             }
+        }
+    
+	
+    }
+    
+    function Pause(){
+        clearInterval(gameloop);
+    }
+    function restart(){
+        gameloop = setInterval(update, 50);
+    }
+    function reset(){
+        isStart = 5;
+        gameloop = setInterval(update, 50);
+    }
+    function StopMusic(){
+        theme.pause();
+
+    }
+    function PlayMusic(){
+        theme.play();
+    }
+    
+    
+    // 每隔隨機秒數產生{
+    //禮物1、禮物2、炸彈、食物 => 寫成function?? 
+    // (1)x在畫布長當中隨機選
+    // (2)掉落時，重力加速度 Y
+    // (3)如果碰到角色則清除，並!!!! 顯示+1 ，否清除
+    
+    //倒數計時
+    //var Obj = setInterval(createObj, 30);
+
+    
+</script>
+    
+</body>
